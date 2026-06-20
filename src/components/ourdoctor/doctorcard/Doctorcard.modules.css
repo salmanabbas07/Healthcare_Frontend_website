@@ -1,0 +1,264 @@
+/* MAIN CARD - Lift + Glow */
+#d-card {
+    width: 45%;
+    height: 400px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #e5e5e5, #f5f5f5);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+#d-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 
+        0 35px 70px rgba(19, 197, 221, 0.3),
+        0 20px 40px rgba(0,0,0,0.2);
+    border-color: rgba(19, 197, 221, 0.4);
+}
+
+/* DOCTOR IMAGE - Zoom + Shine */
+#d-card img {
+    width: 50%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+#d-card:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.1) saturate(1.2);
+    box-shadow: inset 0 0 50px rgba(255,255,255,0.3);
+}
+
+/* HEADING SECTION */
+#d-heading {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+#d-card:hover #d-heading {
+    background: linear-gradient(135deg, rgba(19,197,221,0.05), rgba(19,197,221,0.02));
+}
+
+/* DOCTOR NAME - Bounce Effect */
+#d-heading h1 {
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0 0 10px 0;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: translateY(0);
+}
+
+#d-card:hover #d-heading h1 {
+    transform: translateY(-8px) scale(1.05);
+    color: #1d2a4d;
+    text-shadow: 0 3px 10px rgba(19, 197, 221, 0.3);
+}
+
+/* SPECIALIZATION - Glow */
+#d-heading h3 {
+    font-weight: bold;
+    color: #13c5dd;
+    font-size: 18px;
+    margin: 0 0 15px 0;
+    transition: all 0.3s ease;
+}
+
+#d-card:hover #d-heading h3 {
+    color: #0fa0b5;
+    transform: scale(1.08);
+    text-shadow: 0 2px 8px rgba(19, 197, 221, 0.4);
+}
+
+/* DESCRIPTION */
+#d-heading p {
+    text-align: center;
+    padding: 0 10px;
+    margin: 0 0 20px 0;
+    color: #666;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+#d-card:hover #d-heading p {
+    opacity: 1;
+    color: #444;
+}
+
+/* HR GLOW LINE */
+#d-heading hr {
+    width: 80%;
+    margin: 20px auto;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #13c5dd, transparent);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#d-card:hover #d-heading hr {
+    width: 100%;
+    box-shadow: 0 0 15px rgba(19, 197, 221, 0.6);
+}
+
+/* SOCIAL ICONS - Spin + Pulse */
+#d-icon {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+}
+
+#d-icon i {
+    width: 55px;
+    height: 55px;
+    color: white;
+    background: linear-gradient(135deg, #13c5dd, #0fa0b5);
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 4px 15px rgba(19, 197, 221, 0.3);
+}
+
+#d-icon i:hover {
+    transform: translateY(-10px) rotate(360deg) scale(1.15);
+    background: linear-gradient(135deg, #0fa0b5, #0d8aa0);
+    box-shadow: 
+        0 15px 35px rgba(19, 197, 221, 0.5),
+        0 0 25px rgba(19, 197, 221, 0.4);
+}
+
+
+
+
+@media (min-width:200px) and (max-width:450px) {
+    #d-card {
+        width: 100%;
+        height: auto;
+        /* border: 1px solid red; */
+        flex-direction: column;
+        margin-top: 100px;
+
+    }
+
+    #d-card img {
+        width: 100%;
+        height: 400px;
+        border-radius: 15px;
+        /* margin-top: 200px; */
+        /* padding: 10px; */
+    }
+
+    #d-heading {
+        /* border: 1px solid red; */
+        width: 100%;
+        /* margin-top: 200px; */
+
+    }
+
+    #d-heading h1 {
+        margin-right: 0;
+    }
+
+    #d-heading h3 {
+        margin-right: 0;
+    }
+
+    #d-icon {
+        width: 100%;
+        justify-content: space-evenly;
+        /* border: 1px solid red; */
+        margin-left: 0;
+    }
+
+
+}
+
+@media (min-width:450px) and (max-width:1000px) {
+    #d-card {
+        width: 100%;
+        /* height: auto; */
+        margin-top: 50px;
+      
+    }
+
+     #d-heading {
+        /* border: 1px solid red; */
+        width: 100%;
+        
+
+    }
+
+    #d-heading h1 {
+        margin-right: 0;
+    }
+
+    #d-heading h3 {
+        margin-right: 0;
+    }
+
+    #d-icon {
+        width: 100%;
+        justify-content: space-evenly;
+        /* border: 1px solid red; */
+        margin-left: 0;
+    }
+
+
+}
+
+@media (min-width:1000px) and (max-width:1400px)
+{
+     #d-card {
+        width: 49% !important;
+        height: auto;
+        margin-top: 50px;
+        /* border: 1px solid red; */
+      
+    }
+
+     #d-heading {
+        /* border: 1px solid red; */
+        width: 100%;
+        
+
+    }
+
+    #d-heading h1 {
+        margin-right: 0;
+    }
+
+    #d-heading h3 {
+        margin-right: 0;
+    }
+
+    #d-icon {
+        width: 100%;
+        justify-content: space-evenly;
+        /* border: 1px solid red; */
+        margin-left: 0;
+    }
+
+}
+
+
+/* ........................................................... */

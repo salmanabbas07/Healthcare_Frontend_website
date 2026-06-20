@@ -1,0 +1,122 @@
+/* BASE CARD - Animation Ready */
+#card {
+    width: 32%;
+    min-width: 280px;
+    border-radius: 15px;
+    background-color: rgb(243, 243, 243);
+    overflow: hidden;
+    height: auto;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    position: relative;
+}
+
+#card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 
+        0 30px 60px rgba(1, 182, 206, 0.25),
+        0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* IMAGE HOVER - Zoom + Overlay */
+#card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+    position: relative;
+    border-radius: 0 !important;
+}
+
+#card:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.1) contrast(1.05);
+}
+
+/* TITLE - Slide Up + Color Change */
+#card h3 {
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 15px 10px 10px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+#card:hover h3 {
+    color: #01b6ce;
+    transform: translateY(-5px);
+    text-shadow: 0 2px 8px rgba(1, 182, 206, 0.3);
+}
+
+/* DESCRIPTION - Fade In */
+#card p {
+    color: gray;
+    font-size: 14px;
+    padding: 0 15px 20px;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+#card:hover p {
+    opacity: 1;
+    color: #555;
+}
+
+/* ICONS SECTION - Glow + Bounce */
+#b-icon {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    transition: all 0.3s ease;
+}
+
+#card:hover #b-icon {
+    box-shadow: 0 -5px 20px rgba(1, 182, 206, 0.2);
+    background: linear-gradient(180deg, #ffffff 0%, #f0f8ff 100%);
+}
+
+/* INDIVIDUAL ICONS - Pulse Animation */
+#b-icon i {
+    font-size: 18px;
+    color: #01b6ce;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+
+#b-icon i:hover {
+    transform: scale(1.3) translateY(-3px);
+    color: #0099aa;
+    text-shadow: 0 0 15px rgba(1, 182, 206, 0.8);
+    animation: iconBounce 0.6s ease-in-out;
+}
+
+#b-icon h6 {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#b-icon i:hover + h6 {
+    color: #01b6ce;
+    font-weight: 600;
+}
+
+/* BOUNCE ANIMATION */
+@keyframes iconBounce {
+    0%, 100% { transform: scale(1.3) translateY(-3px); }
+    50% { transform: scale(1.4) translateY(-8px); }
+}
+
+
+
+
+
+

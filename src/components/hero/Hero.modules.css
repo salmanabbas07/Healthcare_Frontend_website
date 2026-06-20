@@ -1,0 +1,330 @@
+.hero {
+  height: 100vh;
+  min-height: 600px;
+  width: 100%;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+              url("../images/mainbg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(19, 197, 221, 0.2), transparent);
+  transition: left 1.2s ease;
+  z-index: 1;
+}
+
+.hero:hover::before {
+  left: 100%;
+}
+
+.heroContent {
+  width: 90%;
+  max-width: 1200px;
+  height: 100%;
+  color: #13c5dd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.heroTitle {
+  color: #009baf;
+  font-family: sans-serif;
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 900;
+  border-bottom: 6px solid rgba(190, 190, 190, 0.8);
+  width: min(90%, 450px);
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 2px;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+  background: linear-gradient(90deg, #009baf, #13c5dd, #009baf);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% { background-position: 0% 50%; filter: drop-shadow(0 0 20px rgba(19, 197, 221, 0.3)); }
+  100% { background-position: 100% 50%; filter: drop-shadow(0 0 40px rgba(19, 197, 221, 0.6)); }
+}
+
+.heroTitle:hover {
+  transform: scale(1.05) skewX(-2deg);
+  border-bottom-color: #13c5dd;
+  filter: drop-shadow(0 10px 40px rgba(19, 197, 221, 0.5));
+  animation-duration: 1.5s;
+}
+
+.heroSubtitle {
+  font-weight: 800;
+  font-size: clamp(28px, 6vw, 55px);
+  color: rgba(255, 255, 255, 0.95) !important;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.heroSubtitle::before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #13c5dd, transparent);
+  transform: translateX(-50%);
+  transition: width 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+  border-radius: 2px;
+}
+
+.heroSubtitle:hover {
+  transform: scale(1.02);
+  text-shadow: 0 5px 30px rgba(19, 197, 221, 0.4);
+}
+
+.heroSubtitle:hover::before {
+  width: 200px;
+}
+
+.heroButtons {
+  width: 70%;
+  max-width: 600px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.heroBtn {
+  flex: 1;
+  min-width: 200px;
+  padding: 18px 40px;
+  font-weight: 800;
+  font-size: clamp(16px, 2.5vw, 20px);
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: sans-serif;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.heroBtnOutline {
+  color: #13c5dd !important;
+  background: rgba(255, 255, 255, 0.15);
+  border: 3px solid rgba(19, 197, 221, 0.6);
+}
+
+.heroBtnSolid {
+  color: #1d2a4d !important;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 1));
+}
+
+.heroBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.8s ease;
+  z-index: 1;
+}
+
+.heroBtn:hover::before {
+  left: 100%;
+}
+
+.heroBtn:hover {
+  transform: translateY(-15px) scale(1.08);
+  box-shadow: 
+    0 25px 60px rgba(19, 197, 221, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.heroBtnOutline:hover {
+  background: linear-gradient(145deg, rgba(19, 197, 221, 0.25), rgba(19, 197, 221, 0.15));
+  border-color: #13c5dd;
+  color: white !important;
+}
+
+.heroBtnSolid:hover {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(240, 248, 255, 1));
+  box-shadow: 
+    0 25px 60px rgba(255, 255, 255, 0.4),
+    0 15px 40px rgba(19, 197, 221, 0.3);
+}
+
+/* RESPONSIVE PERFECTION */
+@media (max-width: 500px) {
+  .hero {
+    background-attachment: scroll;
+    background-position: center;
+  }
+
+  .heroContent {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .heroButtons {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .heroBtn {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 900px) {
+  .hero {
+    background-position: center;
+  }
+
+  .heroContent {
+    width: 85%;
+  }
+
+  .heroButtons {
+    width: 80%;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1599px) {
+  .heroButtons {
+    width: 60%;
+  }
+  
+  .heroBtn {
+    flex: 0 1 48%;
+  }
+}
+
+/* SCROLL INDICATOR */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  width: 2px;
+  height: 50px;
+  background: linear-gradient(to top, #13c5dd, transparent);
+  transform: translateX(-50%);
+  animation: scrollBounce 2s infinite;
+  border-radius: 2px;
+}
+
+@keyframes scrollBounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-10px); }
+  60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+
+
+/* YE FIX KAR DETI HAI - IMAGE UPER SE FULL + PERFECT CENTER! */
+
+.hero {
+  height: 100vh;
+  min-height: 700px; /* Neeche space badhaya */
+  width: 100%;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+              url("../images/mainbg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* IMAGE KO UPER SE START + FULL VISIBILITY */
+  background-position: center 20%; /* UPER 20% shift kiya */
+  background-attachment: scroll; /* Fixed hata diya mobile ke liye */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(19, 197, 221, 0.2), transparent);
+  transition: left 1.2s ease;
+  z-index: 1;
+}
+
+.hero:hover::before {
+  left: 100%;
+}
+
+/* BAKI SAB Waisa hi - sirf ye changes */
+
+.heroContent {
+  width: 90%;
+  max-width: 1200px;
+  height: 100%;
+  color: #13c5dd;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Perfect vertical center */
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px; /* Top padding badhaya */
+  box-sizing: border-box;
+}
+
+/* MOBILE PERFECT FIX */
+@media (max-width: 900px) {
+  .hero {
+    background-position: center 15%; /* Mobile me bhi uper focus */
+    background-attachment: scroll;
+    min-height: 80vh; /* Flexible height */
+    padding-top: 20px;
+  }
+  
+  .heroContent {
+    padding: 60px 20px 40px; /* Top padding zyada */
+    align-items: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    background-position: center 10%; /* Chhote screen uper zyada */
+    min-height: 75vh;
+  }
+}
